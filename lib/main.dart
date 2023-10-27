@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:partyorganizer/pages/details.dart';
 import 'package:partyorganizer/pages/home.dart';
 
 void main() {
@@ -13,21 +14,51 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Party Organizer',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
+      darkTheme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF474553),
-          primary: const Color(0xFF474553),
-          onPrimary: Colors.white,
-          secondary: const Color(0xFFc1b6b0),
+          seedColor: const Color(0xFF000000),
+          background: const Color(0xFF000000),
+          primary: const Color(0xFF9bf306),
+          secondary: const Color(0xFF3aef05),
+          tertiary: const Color(0xFF3171ef),
+          surfaceTint: const Color(0xFF49f0e3),
+          inverseSurface: const Color(0xFF44f2b5),
           onSecondary: const Color(0xFFa7a0a0),
-          tertiary: const Color(0xFFD3CBC4),
-          onTertiary: const Color(0xFFFFFFFF),
           primaryContainer: const Color(0xFF5f5d68),
           secondaryContainer: const Color(0xFF968f92),
+          tertiaryContainer: const Color(0xFFD3CBC4),
+          onPrimary: Colors.white,
+          error: const Color(0xFF7A3232), // delete button
+          surface: const Color(0xFFD8C5BB), // edit button
         ),
         useMaterial3: true,
       ),
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF000000),
+          background: const Color(0xFFFFFFFF),
+          primary: const Color(0xFF9bf306),
+          secondary: const Color(0xFF3aef05),
+          tertiary: const Color(0xFF3171ef),
+          surfaceTint: const Color(0xFF49f0e3),
+          inverseSurface: const Color(0xFF44f2b5),
+          onSecondary: const Color(0xFFa7a0a0),
+          tertiaryContainer: const Color(0xFF5f5d68),
+          secondaryContainer: const Color(0xFFB3ACAE),
+          primaryContainer: const Color(0xFF312F2D),
+          onPrimary: Colors.black,
+          error: const Color(0xFFCF4747), // delete button
+          surface: const Color(0xFFF5DAD0), // edit button
+          onSurface: Colors.white,
+        ),
+        useMaterial3: true,
+      ),
+      themeMode: ThemeMode.dark,
       home: const Home(),
+      routes: <String, WidgetBuilder>{
+        '/home': (context) => const Home(),
+        '/details': (context) => const Details(),
+      },
     );
   }
 }

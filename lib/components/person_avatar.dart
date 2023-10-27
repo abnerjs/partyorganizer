@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class PersonAvatar extends StatefulWidget {
@@ -17,33 +19,37 @@ class _PersonAvatarState extends State<PersonAvatar> {
   @override
   Widget build(BuildContext context) {
     return widget.name != null
-        ? _buildAvatarFromName(widget)
+        ? _buildAvatarFromName(widget, context)
         : _buildAvatarFromImage(widget);
   }
 }
 
-Widget _buildAvatarFromName(widget) {
+Widget _buildAvatarFromName(widget, context) {
   return Material(
     shape: const CircleBorder(),
     clipBehavior: Clip.antiAlias,
     color: Colors.transparent,
-    child: Ink(
-      width: widget.size ?? 48.0,
-      height: widget.size ?? 48.0,
-      decoration: BoxDecoration(
-        color: getColorFromName(widget.name.trim() ?? ""),
-        shape: BoxShape.circle,
-      ),
-      child: InkWell(
-        onTap: () {
-          // Ação ao clicar
-        },
-        child: Center(
-          child: Text(
-            getNameInitials(widget.name.trim() ?? ""),
-            style: const TextStyle(
-              fontSize: 24.0,
-              color: Colors.white,
+    child: BackdropFilter(
+      filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+      child: Ink(
+        width: widget.size ?? 48.0,
+        height: widget.size ?? 48.0,
+        decoration: ShapeDecoration(
+          color:
+              Theme.of(context).colorScheme.primaryContainer.withOpacity(0.5),
+          shape: const CircleBorder(),
+        ),
+        child: InkWell(
+          onTap: () {
+            // Ação ao clicar
+          },
+          child: Center(
+            child: Text(
+              getNameInitials(widget.name.trim() ?? ""),
+              style: const TextStyle(
+                fontSize: 24.0,
+                color: Colors.white,
+              ),
             ),
           ),
         ),
