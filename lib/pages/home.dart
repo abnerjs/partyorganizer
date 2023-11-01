@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:partyorganizer/components/person_avatar.dart';
-import 'package:partyorganizer/pages/form_page.dart';
+import 'package:partyplanner/components/person_avatar.dart';
+import 'package:partyplanner/pages/form_page.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -158,7 +158,7 @@ class _HomeState extends State<Home> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Party Organizer",
+                        "Party Planner",
                         style: GoogleFonts.roboto(
                           color:
                               Theme.of(context).colorScheme.tertiaryContainer,

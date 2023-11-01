@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:partyorganizer/pages/details.dart';
-import 'package:partyorganizer/pages/home.dart';
+import 'package:partyplanner/pages/details.dart';
+import 'package:partyplanner/pages/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Party Organizer',
+      title: 'Party Planner',
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData(
         colorScheme: ColorScheme.fromSeed(

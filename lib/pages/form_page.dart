@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:partyorganizer/components/styled_text_field.dart';
+import 'package:partyplanner/components/styled_text_field.dart';
 
 class FormPage extends StatefulWidget {
   const FormPage({super.key});
