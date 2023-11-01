@@ -10,4 +10,12 @@ An app to organize parties and events. With this app, you can create events, reg
 
 ## Features
 - Register people
-- Make people a 
+- Make people an organizer of the event
+- See the location of the event on the map
+
+## To do
+- [X] Main design
+- [ ] Register people and get their profile picture
+- [ ] Make people an organizer of the event
+- [ ] See the location of the event on the map
+- [ ] Manage the event on back4app
